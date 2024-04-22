@@ -323,22 +323,27 @@ include an access tier
 New-AzStorageContainer -ResourceGroupName "storage" -AccountName "storageaccount1" -ContainerName "Container"
 ```
 
-### Create a storage container in a storage account (using the storage account object) 
-1. Get the storage account and store it as a variable
-```
-$storageaccount = Get-AzStorageAccount -
-ResourceGroupName "storage" -AccountName
-"storageaccount1"
-```
-2. Make sure you have the right one
-```
-$storageaccount #This will show you the storage account object you stored in the variable $storageaccount 
-```
-3. Create the container in the storage account object
-```
-NewAzStorageContainer -StorageAccount
-$accountObject -ContainerName "Container"
-```
+### Create a storage container in a storage account (using the storage account access key) 
+
+#First create storage account using follwing command
+New-AzStorageAccount -ResourceGroupName "Learningazuredevops" -Name "sslstoragecontainer" -Location "eastus2" -SkuName "Standard_LRS"
+
+#Create context which will help us to authenticate with azure storage account using below command.
+######StorageAccountKey - You can copy the key 1 from your storage account of storage you created in first step.
+Go to storage account--> select access key -->Get key 1 -->paste in key 1 
+
+$azure730pm = New-AzureStorageContext -StorageAccountName "naveenstorage3243" -StorageAccountKey "key"
+# To check context set or not use below command 
+$azure730pm
+
+#Create storage container using following command .
+
+New-AzureStorageContainer -Name "sslstoragecontainer24" -Context $azure730pm
+
+
+
+
+
 
 **Remove Accounts and Containers**
 
