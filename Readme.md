@@ -395,7 +395,7 @@ HINT:  Replace appserviceplan from Step I.
 ### List all VMs in current subscription 
 ```
 Get-AzVM
-```
+
 
 ### List VMs in a resource group See Resource Groups section above)
 ```
@@ -408,12 +408,16 @@ Get-AzVM -ResourceGroupName “resourcegroup” -Name "myVM"
 ```
 
 ### Create a VM – Simplified
-Create a simple M 
+**First Option**
+Create a simple VM 
 ```
 New-AzVM -Name “vmname” #Typing in this simple command will create a VM and populate names for all the associated
 objects based on the VM name specified.
 ```
-
+**Second Option**
+new-azvm -ResourceGroupName "NaveenTraining" -Name "naveenvm45464" -Location "central india" -Size "Standard_B1s"
+Then it will ask you to enter name of vm, credential
+---------------------------------------------------------------------
 ### Create a VM Configuration Before Creating the Virtual Machine
 
 Use the following tasks to create a new VM configuration before creating your Virtual Machine based on
