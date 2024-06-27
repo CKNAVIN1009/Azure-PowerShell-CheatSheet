@@ -33,7 +33,8 @@ sections:
 5. Storage
 6. Virtual Machines
 7. Networking
-8. Azure Active Directory 
+8. Azure Active Directory
+9. Azure App service(WebApp)
 
 **Accounts and Subscriptions **
 
@@ -365,6 +366,28 @@ variable first using
 $storageaccount = Get-AzStorageAccount -ResourceGroupName "storage" -AccountName "storageaccount1" 
 ```
 
+
+======================================================================================================
+****App service******
+First Option:
+------------
+new-azwebpp
+Then--->it will ask for name of app service
+Then--->it will create app service by default as below:
+appservice name:  which we given
+RG:  As appsericename
+location:  eastus
+
+Second Options:
+----------------
+I:  Create app service plan.
+new-azappserviceplan -Name "appserviceplan1" -Location "westeurope" -ResourceGroupName "NaveenTraining"
+
+II:  Create app service:
+new-azwebapp -ResourceGroupName "NaveenTraining" -Name "naveen445" -Location "westeurope" -AppServicePlan "appserviceplan1"
+HINT:  Replace appserviceplan from Step I.
+
+------------------------------------------------------------------
 ***Deploy and Manage Virtual Machines***
 
 **Get information about VMs**
