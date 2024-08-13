@@ -319,10 +319,6 @@ include an access tier
 • Hot
 • Cold
 
-### Create a storage container in a storage Account (using storage account name)
-```
-New-AzStorageContainer -ResourceGroupName "storage" -AccountName "storageaccount1" -ContainerName "Container"
-```
 
 ### Create a storage container in a storage account (using the storage account access key) 
 
