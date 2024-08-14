@@ -63,6 +63,35 @@ Get-AzSubscription -TenantId "xxxx-xxxx-xxxxxxxx"
 ```
 Select-AzSubscription –SubscriptionID “SubscriptonID” 
 ```
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------
+
+** Virtual network creation with powershell **
+--------------
+Pleas follow the steps:
+1.  
+
+$vnet = @{
+    Name = 'vnet-1'
+    ResourceGroupName = 'naveenrg'
+    Location = 'eastus2'
+    AddressPrefix = '10.0.0.0/16'
+}
+$virtualNetwork = New-AzVirtualNetwork @vnet
+
+2.  
+
+$subnet = @{
+    Name = 'subnet-1'
+    VirtualNetwork = $virtualNetwork
+    AddressPrefix = '10.0.0.0/24'
+}
+$subnetConfig = Add-AzVirtualNetworkSubnetConfig @subnet
+
+3.  
+$virtualNetwork | Set-AzVirtualNetwork
+
+REFER below for more information
 
 
 **Resource Groups**
