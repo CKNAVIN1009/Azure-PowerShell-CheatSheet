@@ -93,6 +93,9 @@ $virtualNetwork | Set-AzVirtualNetwork
 
 REFER below for more information
 
+https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-powershell
+-------------------------------------------------------------------------------------------------
+
 
 **Resource Groups**
 ### Retrieving Resource Groups
