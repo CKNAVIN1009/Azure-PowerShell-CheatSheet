@@ -320,9 +320,7 @@ Get-AzStorageAccount
 
 ### Create Storage Account
 ```
-New-AzStorageAccount -ResourceGroupName
-“myResourceGroup” -Name “storage1” -Location
-“westeurope”-SkuName “Standard_LRS”
+New-AzStorageAccount -ResourceGroupName "myResourceGroup" -Name "storage1" -Location "westeurope"-SkuName "Standard_LRS"
 ```
 
 ### SKU Options
